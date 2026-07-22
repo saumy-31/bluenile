@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Nile Restaurant | Pune's Legendary Biryani & Mughlai Heritage Since 1970</title>
+    
+    <!-- Google Fonts: Playfair Display for Regal Editorial Titles & Plus Jakarta Sans for UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        nile: {
+                            blue: '#1E40AF',       /* Nile Cobalt Royal Blue */
+                            deep: '#0F172A',       /* Deep Midnight Surface */
+                            azure: '#2563EB',      /* Vivid Accent Blue */
+                            gold: '#D4AF37',       /* Regal Imperial Gold */
+                            sand: '#F8FAFC',       /* Soft Ceramic White */
+                            cardBg: '#182238',     /* Rich Navy Panel */
+                            border: 'rgba(212, 175, 55, 0.2)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS Styles -->
+    <style type="text/css">
+        .glass-panel {
+            background: rgba(24, 34, 56, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FFF0C2 0%, #D4AF37 50%, #996515 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-blue {
+            background: linear-gradient(135deg, #60A5FA 0%, #2563EB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-gold {
+            box-shadow: 0 0 45px -10px rgba(212, 175, 55, 0.3);
+        }
+        .glow-blue {
+            box-shadow: 0 0 45px -10px rgba(37, 99, 235, 0.4);
+        }
+        /* Reveal Animation Utilities */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F172A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E40AF;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-nile-deep text-slate-100 font-sans antialiased selection:bg-nile-blue selection:text-white">
+
+    <!-- TOP HERITAGE STATUS BAR -->
+    <div class="bg-gradient-to-r from-nile-blue via-blue-900 to-nile-deep border-b border-nile-border py-2.5 px-4 text-xs font-medium text-slate-200">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 text-nile-gold font-bold uppercase tracking-wider text-[10px] bg-black/40 px-2.5 py-0.5 rounded-full border border-nile-border">
+                    <i class="fa-solid fa-crown text-[10px]"></i> SINCE 1970
+                </span>
+                <span class="truncate">Satisfying Pune with legendary biryani & authentic Mughlai aroma for over 50 years.</span>
+            </div>
+            <div class="flex items-center gap-5 text-[11px] font-semibold tracking-wider uppercase shrink-0">
+                <span class="text-emerald-400 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Open Daily till 11:00 PM</span>
+                <span class="text-slate-500">•</span>
+                <a href="#contact" class="hover:text-nile-gold transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-location-dot text-nile-gold"></i> Opp. Poona Club, Bund Garden Rd
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY LUXURY NAVIGATION -->
+    <header class="sticky top-0 z-50 transition-all duration-300 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- BRAND LOGO -->
+                <a href="#" class="flex items-center gap-3.5 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-nile-blue to-blue-800 p-0.5 flex items-center justify-center shadow-xl group-hover:scale-105 transition-transform border border-nile-gold/40">
+                        <div class="w-full h-full bg-nile-deep rounded-[10px] flex items-center justify-center">
+                            <span class="font-serif font-black text-2xl text-gradient-gold">BN</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif font-bold text-2xl tracking-wider text-white leading-none">BLUE NILE</span>
+                        <span class="text-[9px] font-bold tracking-[0.25em] text-nile-gold uppercase mt-1">Mughlai Restaurant</span>
+                    </div>
+                </a>
+
+                <!-- Editorial Nav Links -->
+                <nav class="hidden lg:flex items-center space-x-9 text-xs font-bold tracking-widest uppercase text-slate-300">
+                    <a href="#heritage" class="hover:text-nile-gold transition-colors">Heritage</a>
+                    <a href="#specialties" class="hover:text-nile-gold transition-colors">Culinary Specialties</a>
+                    <a href="#menu" class="hover:text-nile-gold transition-colors">Signature Menu</a>
+                    <a href="#experience" class="hover:text-nile-gold transition-colors">Experience</a>
+                    <a href="#reviews" class="hover:text-nile-gold transition-colors">Reviews</a>
+                    <a href="#contact" class="hover:text-nile-gold transition-colors">Location</a>
+                </nav>
+
+                <!-- Navigation CTAs -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="#reserve" class="px-6 py-3 rounded-full bg-gradient-to-r from-nile-gold via-amber-400 to-yellow-600 text-nile-deep font-extrabold text-xs uppercase tracking-widest hover:opacity-95 transition-all shadow-lg glow-gold transform hover:-translate-y-0.5">
+                        Book A Table
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" type="button" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden border-b border-nile-border bg-nile-deep/98 backdrop-blur-2xl px-6 pt-4 pb-6 space-y-4">
+            <a href="#heritage" class="mobile-nav-link block text-sm font-semibold text-slate-200 hover:text-nile-gold">Our 1970 Heritage</a>
+            <a href="#specialties" class="mobile-nav-link block text-sm font-semibold text-slate-200 hover:text-nile-gold">Iconic Biryani & Kebabs</a>
+            <a href="#menu" class="mobile-nav-link block text-sm font-semibold text-slate-200 hover:text-nile-gold">Signature Menu Highlights</a>
+            <a href="#experience" class="mobile-nav-link block text-sm font-semibold text-slate-200 hover:text-nile-gold">Dining Ambience</a>
+            <a href="#reviews" class="mobile-nav-link block text-sm font-semibold text-slate-200 hover:text-nile-gold">18,000+ Guest Reviews</a>
+            <a href="#contact" class="mobile-nav-link block text-sm font-semibold text-slate-200 hover:text-nile-gold">Location & Contact</a>
+            <div class="pt-2 border-t border-nile-border">
+                <a href="#reserve" class="w-full text-center block bg-gradient-to-r from-nile-gold to-yellow-600 text-nile-deep font-extrabold py-3.5 rounded-xl uppercase text-xs tracking-widest">
+                    Reserve Table Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden py-24">
+        <!-- Hero Overlay Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=2000&q=80" alt="Royal Mughlai Biryani Feast" class="w-full h-full object-cover brightness-[0.28] scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-nile-deep via-nile-deep/60 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-nile-gold/40 text-xs font-bold text-nile-gold tracking-widest uppercase">
+                        <i class="fa-solid fa-crown text-xs"></i> Known to Have the Best Biryani in Pune
+                    </div>
+                    
+                    <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-normal tracking-tight leading-[1.03] text-white">
+                        TASTE THE <br />
+                        <span class="italic text-gradient-gold font-serif">REGAL HERITAGE.</span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Experience the rich aroma, hand-ground spices, and slow-cooked royal traditions that have been satisfying Pune's finest connoisseurs since 1970.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#menu" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-nile-gold via-amber-400 to-yellow-600 text-nile-deep font-extrabold text-xs uppercase tracking-widest text-center shadow-xl glow-gold hover:scale-[1.03] transition-all">
+                            Explore Culinary Menu →
+                        </a>
+                        <a href="#reserve" class="w-full sm:w-auto px-8 py-4 rounded-full glass-panel text-slate-200 hover:text-white font-bold text-xs uppercase tracking-widest text-center border border-nile-border hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                            <span>Book A Table</span>
+                            <i class="fa-solid fa-arrow-right text-xs text-nile-gold"></i>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-8 border-t border-nile-border/60 grid grid-cols-3 gap-4 text-left">
+                        <div>
+                            <p class="font-serif text-3xl font-bold text-white">18,100+</p>
+                            <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">Google Reviews</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-3xl font-bold text-nile-gold">1970</p>
+                            <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">Established Year</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-3xl font-bold text-white">4.1 ★</p>
+                            <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">Verified Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Visual Feature Card -->
+                <div class="lg:col-span-5 relative hidden lg:block">
+                    <div class="relative mx-auto max-w-md">
+                        <div class="absolute -inset-1 bg-gradient-to-tr from-nile-gold via-nile-blue to-amber-600 rounded-3xl opacity-30 blur-2xl"></div>
+                        
+                        <div class="relative rounded-2xl overflow-hidden glass-panel border border-nile-border shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=1000&q=80" alt="Authentic Mutton Biryani" class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700">
+                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-nile-deep via-transparent to-transparent"></div>
+                            
+                            <div class="absolute bottom-6 left-6 right-6 p-5 rounded-xl glass-panel border border-nile-gold/30">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-xs text-nile-gold font-bold uppercase tracking-wider">Blue Nile Signature</p>
+                                        <p class="text-lg font-serif font-bold text-white">Aromatic Mutton Biryani</p>
+                                    </div>
+                                    <span class="text-xs font-extrabold text-nile-deep bg-nile-gold px-3 py-1.5 rounded-full uppercase shadow">Iconic</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HERITAGE STORY SECTION -->
+    <section id="heritage" class="py-24 relative overflow-hidden bg-gradient-to-b from-nile-deep via-nile-cardBg to-nile-deep">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Image Grid -->
+                <div class="lg:col-span-6 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Mughlai Barbecue Kebabs" class="rounded-2xl object-cover h-72 w-full glass-panel border border-nile-border">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Blue Nile Dining Entrance" class="rounded-2xl object-cover h-72 w-full translate-y-8 glass-panel border border-nile-border">
+                    </div>
+                </div>
+
+                <!-- Right Narrative Content -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-nile-gold/10 border border-nile-gold/30 text-xs font-bold text-nile-gold uppercase tracking-widest">
+                        OUR 1970 HERITAGE
+                    </div>
+                    
+                    <h2 class="font-serif text-4xl sm:text-5xl font-normal text-white leading-tight">
+                        Over Five Decades of <br />
+                        <span class="italic text-gradient-gold">Culinary Perfection in Pune.</span>
+                    </h2>
+                    
+                    <p class="text-slate-300 text-base leading-relaxed font-light">
+                        Located conveniently opposite the Poona Club on Bund Garden Road, Blue Nile has stood as a bastion of authentic Mughlai and Indian gastronomy since 1970. Celebrated far and wide for serving Pune's most revered Biryani, our kitchen preserves centuries-old cooking techniques passed down through master chefs.
+                    </p>
+                    
+                    <div class="p-6 rounded-2xl glass-panel border-l-4 border-l-nile-gold border-nile-border space-y-2">
+                        <p class="text-white font-serif text-lg italic">
+                            "Known to have the best biryani, experience the rich aroma & spices with us. Satisfying Pune since 1970."
+                        </p>
+                        <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold">— Official Blue Nile Legacy</p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-nile-gold/20 flex items-center justify-center text-nile-gold shrink-0">
+                                <i class="fa-solid fa-fire-burner text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Authentic Dum Cooking</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Slow dum cooked in sealed pots to seal in natural aromas.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-nile-gold/20 flex items-center justify-center text-nile-gold shrink-0">
+                                <i class="fa-solid fa-users text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Spacious Family Seating</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Air-conditioned multi-level dining with outdoor seating.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNATURE MENU HIGHLIGHTS SECTION -->
+    <section id="menu" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-nile-gold/10 border border-nile-gold/30 text-xs font-bold text-nile-gold uppercase tracking-widest">
+                    SIGNATURE MENU HIGHLIGHTS
+                </div>
+                <h2 class="font-serif text-4xl sm:text-5xl font-normal text-white">The Dishes That Made Us Famous</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">Hand-selected favorites voted time and time again by thousands of diners across India.</p>
+            </div>
+
+            <!-- Menu Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Item 1: Mutton Biryani -->
+                <div class="glass-panel rounded-2xl p-5 border border-nile-border hover:border-nile-gold transition-all group flex flex-col justify-between reveal-element">
+                    <div>
+                        <div class="h-48 rounded-xl overflow-hidden mb-5 relative">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Mutton Biryani" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-nile-gold text-nile-deep text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">#1 Most Ordered</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Mutton Biryani</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Tender, succulent mutton pieces layered with long-grain basmati rice, saffron, and fresh mint.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-nile-border/50 flex justify-between items-center text-xs">
+                        <span class="text-slate-400">345+ Verified Reviews</span>
+                        <span class="font-bold text-nile-gold">★ 4.8</span>
+                    </div>
+                </div>
+
+                <!-- Item 2: Chicken Biryani -->
+                <div class="glass-panel rounded-2xl p-5 border border-nile-border hover:border-nile-gold transition-all group flex flex-col justify-between reveal-element">
+                    <div>
+                        <div class="h-48 rounded-xl overflow-hidden mb-5 relative">
+                            <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=600&q=80" alt="Chicken Biryani" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-nile-blue text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">Pune Legend</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Chicken Biryani</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Juicy bone-in chicken marinated in yogurt and traditional Mughlai spices, dum baked.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-nile-border/50 flex justify-between items-center text-xs">
+                        <span class="text-slate-400">346+ Verified Reviews</span>
+                        <span class="font-bold text-nile-gold">★ 4.8</span>
+                    </div>
+                </div>
+
+                <!-- Item 3: Chicken Tandoori -->
+                <div class="glass-panel rounded-2xl p-5 border border-nile-border hover:border-nile-gold transition-all group flex flex-col justify-between reveal-element">
+                    <div>
+                        <div class="h-48 rounded-xl overflow-hidden mb-5 relative">
+                            <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=80" alt="Chicken Tandoori" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">Charcoal Grilled</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Chicken Tandoori</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Sizzling whole chicken leg & breast pieces grilled over charcoal clay ovens with spiced butter.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-nile-border/50 flex justify-between items-center text-xs">
+                        <span class="text-slate-400">98+ Special Reviews</span>
+                        <span class="font-bold text-nile-gold">★ 4.7</span>
+                    </div>
+                </div>
+
+                <!-- Item 4: Caramel Custard -->
+                <div class="glass-panel rounded-2xl p-5 border border-nile-border hover:border-nile-gold transition-all group flex flex-col justify-between reveal-element">
+                    <div>
+                        <div class="h-48 rounded-xl overflow-hidden mb-5 relative">
+                            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" alt="Caramel Custard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-nile-deep text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">Iconic Dessert</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Caramel Custard</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Silky smooth, melt-in-your-mouth classic caramel pudding—the traditional finish to every Blue Nile meal.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-nile-border/50 flex justify-between items-center text-xs">
+                        <span class="text-slate-400">123+ Sweet Reviews</span>
+                        <span class="font-bold text-nile-gold">★ 4.9</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AMBIENCE & SERVICE OPTIONS -->
+    <section id="experience" class="py-24 bg-gradient-to-b from-nile-deep via-nile-cardBg to-nile-deep relative border-y border-nile-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-nile-gold/10 border border-nile-gold/30 text-xs font-bold text-nile-gold uppercase tracking-widest">
+                        DINING AMBIENCE
+                    </div>
+                    
+                    <h2 class="font-serif text-4xl sm:text-5xl font-normal text-white leading-tight">
+                        Spacious Indoor Air-Conditioned Comfort <br />
+                        <span class="italic text-gradient-gold">& Outdoor Seating.</span>
+                    </h2>
+                    
+                    <p class="text-slate-300 text-sm leading-relaxed font-light">
+                        Whether you are gathering with family for a festive feast, enjoying a quick corporate lunch, or looking for open-air evening dining, Blue Nile provides an inviting atmosphere paired with swift, traditional hospitality.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="p-4 rounded-xl glass-panel border border-nile-border flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-nile-gold/20 flex items-center justify-center text-nile-gold text-xl shrink-0">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">All You Can Eat Options</h4>
+                                <p class="text-xs text-slate-400">Generous meal portions designed for hearty appetite satisfaction.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl glass-panel border border-nile-border flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-nile-gold/20 flex items-center justify-center text-nile-gold text-xl shrink-0">
+                                <i class="fa-solid fa-tree"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Outdoor Seating Area</h4>
+                                <p class="text-xs text-slate-400">Pleasant al-fresco dining options under Pune's evening skies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 relative">
+                    <div class="glass-panel p-3 rounded-2xl border border-nile-border shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Restaurant Interior Experience" class="rounded-xl w-full h-[460px] object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS & REVIEWS SECTION -->
+    <section id="reviews" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-nile-gold/10 border border-nile-gold/30 text-xs font-bold text-nile-gold uppercase tracking-widest">
+                    GUEST REVIEWS
+                </div>
+                <h2 class="font-serif text-4xl sm:text-5xl font-normal text-white">Loved By Generations of Diners</h2>
+                <p class="text-slate-400 text-sm">Over 18,140+ Google Reviews with an average 4.1 Rating.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="glass-panel rounded-2xl p-6 border border-nile-border flex flex-col justify-between reveal-element">
+                    <div>
+                        <div class="flex text-amber-400 text-xs gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs text-slate-300 italic leading-relaxed mb-6">
+                            "Blue Nile is an absolute institution in Pune! Their mutton biryani is unmatched—flavorful, non-greasy, and cooked to perfection every single visit."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-nile-border">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-nile-gold to-yellow-600 flex items-center justify-center font-bold text-nile-deep text-xs">
+                            AK
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-white">Aditya K.</p>
+                            <p class="text-[10px] text-slate-400">Google Verified Diner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-panel rounded-2xl p-6 border border-nile-border flex flex-col justify-between reveal-element">
+                    <div>
+                        <div class="flex text-amber-400 text-xs gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs text-slate-300 italic leading-relaxed mb-6">
+                            "Been coming here with family since the 1990s. The chicken tandoori and caramel custard bring back so many fond memories. Unbeatable legacy!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-nile-border">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-nile-gold to-yellow-600 flex items-center justify-center font-bold text-nile-deep text-xs">
+                            PS
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-white">Pooja S.</p>
+                            <p class="text-[10px] text-slate-400">Local Guide Pune</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-panel rounded-2xl p-6 border border-nile-border flex flex-col justify-between reveal-element">
+                    <div>
+                        <div class="flex text-amber-400 text-xs gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs text-slate-300 italic leading-relaxed mb-6">
+                            "Fast service, courteous staff, and the best Mughlai gravy in Camp area! Ideal location right opposite Poona Club."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-nile-border">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-nile-gold to-yellow-600 flex items-center justify-center font-bold text-nile-deep text-xs">
+                            RM
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-white">Rohan M.</p>
+                            <p class="text-[10px] text-slate-400">Food Connoisseur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-24 bg-gradient-to-b from-nile-deep via-nile-cardBg to-nile-deep border-t border-nile-border">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-nile-gold/10 border border-nile-gold/30 text-xs font-bold text-nile-gold uppercase tracking-widest">
+                    INFORMATION & FAQS
+                </div>
+                <h2 class="font-serif text-4xl sm:text-5xl font-normal text-white">Frequently Asked Questions</h2>
+                <p class="text-slate-400 text-sm">Everything you need to know prior to visiting Blue Nile.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="glass-panel rounded-xl border border-nile-border overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-white text-sm flex justify-between items-center hover:bg-white/5 transition-colors">
+                        <span>What are the opening hours of Blue Nile Restaurant?</span>
+                        <i class="fa-solid fa-chevron-down text-nile-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-xs text-slate-300 leading-relaxed border-t border-nile-border/40 pt-3">
+                        Blue Nile Restaurant is open daily for lunch and dinner until 11:00 PM.
+                    </div>
+                </div>
+
+                <div class="glass-panel rounded-xl border border-nile-border overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-white text-sm flex justify-between items-center hover:bg-white/5 transition-colors">
+                        <span>What is the approximate price range per person?</span>
+                        <i class="fa-solid fa-chevron-down text-nile-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-xs text-slate-300 leading-relaxed border-t border-nile-border/40 pt-3">
+                        The average price ranges between ₹400 – ₹1,200 per person depending on menu selections.
+                    </div>
+                </div>
+
+                <div class="glass-panel rounded-xl border border-nile-border overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-white text-sm flex justify-between items-center hover:bg-white/5 transition-colors">
+                        <span>Where is Blue Nile Restaurant located?</span>
+                        <i class="fa-solid fa-chevron-down text-nile-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-xs text-slate-300 leading-relaxed border-t border-nile-border/40 pt-3">
+                        We are located at 102, Bund Garden Road, Agarkar Nagar, Camp, Pune, Maharashtra 411001 (Opposite Poona Club).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESERVATION & CONTACT SECTION -->
+    <section id="reserve" class="py-24 relative border-t border-nile-border">
+        <div id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contact Information -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-nile-gold/10 border border-nile-gold/30 text-xs font-bold text-nile-gold uppercase tracking-widest">
+                        LOCATION & RESERVATIONS
+                    </div>
+                    
+                    <h2 class="font-serif text-4xl sm:text-5xl font-normal text-white">
+                        Visit Blue Nile <br />
+                        <span class="italic text-gradient-gold">In Bund Garden Road.</span>
+                    </h2>
+                    
+                    <p class="text-slate-300 text-sm leading-relaxed font-light">
+                        Reserve your table for family lunches, group dinners, or special Mughlai celebrations.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="p-4 rounded-xl glass-panel border border-nile-border flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-nile-gold/20 text-nile-gold flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="text-xs">
+                                <p class="text-slate-400 font-medium">Address</p>
+                                <p class="text-white font-bold">102, Bund Garden Rd, Agarkar Nagar, Pune 411001</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl glass-panel border border-nile-border flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-nile-gold/20 text-nile-gold flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div class="text-xs">
+                                <p class="text-slate-400 font-medium">Instagram Official</p>
+                                <a href="https://instagram.com/bluenile_pune" target="_blank" class="text-nile-gold font-bold hover:underline">@bluenile_pune</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Booking Form -->
+                <div class="lg:col-span-7">
+                    <div class="glass-panel p-8 rounded-3xl border border-nile-border shadow-2xl">
+                        <h3 class="font-serif text-3xl font-bold text-white mb-2">Book Your Table</h3>
+                        <p class="text-xs text-slate-400 mb-6">Complete the form below and our host team will confirm your reservation.</p>
+
+                        <form id="reservation-form" onsubmit="event.preventDefault(); alert('Table reservation request sent to Blue Nile Restaurant! We will contact you shortly to confirm.');" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Full Name</label>
+                                    <input type="text" required placeholder="e.g. Vikramaditya Roy" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-nile-border text-white text-sm focus:outline-none focus:border-nile-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Phone Number</label>
+                                    <input type="tel" required placeholder="e.g. +91 98765 43210" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-nile-border text-white text-sm focus:outline-none focus:border-nile-gold">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Guests</label>
+                                    <input type="number" min="1" max="30" value="2" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-nile-border text-white text-sm focus:outline-none focus:border-nile-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Date</label>
+                                    <input type="date" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-nile-border text-white text-sm focus:outline-none focus:border-nile-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Time</label>
+                                    <input type="time" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-nile-border text-white text-sm focus:outline-none focus:border-nile-gold">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-nile-gold via-amber-400 to-yellow-600 text-nile-deep font-extrabold text-xs uppercase tracking-widest shadow-xl glow-gold hover:opacity-95 transition-all">
+                                CONFIRM RESERVATION REQUEST
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-nile-border bg-black pt-16 pb-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-nile-border/50">
+                
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-nile-gold to-yellow-600 flex items-center justify-center font-serif font-bold text-nile-deep text-lg">
+                            BN
+                        </div>
+                        <span class="font-serif font-bold text-xl tracking-wider text-white">BLUE NILE</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        Mughlai Restaurant. Known to have the best biryani in Pune. Experience the rich aroma & authentic spices satisfying Pune since 1970.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <p class="font-bold text-white uppercase tracking-wider mb-4 text-xs">Quick Links</p>
+                    <ul class="space-y-2.5">
+                        <li><a href="#heritage" class="hover:text-nile-gold transition-colors">1970 Heritage</a></li>
+                        <li><a href="#menu" class="hover:text-nile-gold transition-colors">Specialties Menu</a></li>
+                        <li><a href="#experience" class="hover:text-nile-gold transition-colors">Ambience & Outdoor</a></li>
+                        <li><a href="#reviews" class="hover:text-nile-gold transition-colors">Guest Reviews</a></li>
+                        <li><a href="#reserve" class="hover:text-nile-gold transition-colors">Reserve Table</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <p class="font-bold text-white uppercase tracking-wider mb-4 text-xs">Address & Hours</p>
+                    <p class="text-slate-300">102, Bund Garden Rd, Agarkar Nagar, Pune 411001</p>
+                    <p class="text-slate-400 mt-2">Opposite Poona Club</p>
+                    <p class="text-nile-gold mt-2 font-semibold">Open Daily until 11:00 PM</p>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <p class="font-bold text-white uppercase tracking-wider mb-4 text-xs">Follow & Connect</p>
+                    <div class="flex items-center gap-4 text-base text-slate-300 mb-4">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-nile-gold transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/bluenile_pune" target="_blank" aria-label="Instagram" class="hover:text-nile-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <p class="text-[11px] text-slate-500">© 2026 Blue Nile Restaurant. All Rights Reserved.</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
+                <p>Blue Nile Restaurant • Bund Garden Road, Camp, Pune</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-300 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // FAQ Accordion Toggle
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+
+                content.classList.toggle('hidden');
+
+                if(content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Scroll Reveal Script
+        const revealElements = document.querySelectorAll('.reveal-element');
+
+        const revealOnScroll = () => {
+            const triggerBottom = window.innerHeight * 0.88;
+
+            revealElements.forEach(el => {
+                const elTop = el.getBoundingClientRect().top;
+                if(elTop < triggerBottom) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>
